@@ -1,0 +1,147 @@
+:root {
+    --backgroundColor: #121212;
+    --textArea-bg: #2C3333;
+    --scrollBarbg: #33313B;
+    --scrollBarthumb: #63676f;
+    --borderTextarea: #FDC91E;
+    --defaultTextcolor: #FDC91E;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body {
+
+    /* min-height: 100vh; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*x Header Starts here */
+.cb-header {
+    position: static;
+    background-color: black;
+    min-height: 60px;
+    width: 100%;
+    display: flex;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 250px;
+}
+
+.cb-heading {
+    display: flex;
+    align-items: center;
+}
+
+.cb-title {
+    color: white;
+}
+
+.cb-icon {
+    margin-left: 10px;
+    height: 60px;
+    width: 60px;
+}
+
+.bee {
+    height: 100%;
+    width: 100%;
+    transform: scale(0.9);
+}
+
+/*x main section starts here */
+main {
+    display: flex;
+    height: calc(100vh - 60px);
+    background-color: var(--backgroundColor);
+}
+
+.editor {
+    padding: 0.5rem;
+    width: 30%;
+    overflow: auto;
+    resize: horizontal;
+}
+
+.editor::-webkit-scrollbar {
+    width: 6px;
+    background-color: var(--scrollBarbg);
+}
+
+.editor::-webkit-scrollbar-thumb {
+    width: 6px;
+    background-color: var(--scrollBarthumb);
+}
+
+.code {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.code textarea {
+    height: calc(100% - 2rem);
+    width: 100%;
+    background-color: var(--textArea-bg);
+    border: none;
+    outline: none;
+    resize: vertical;
+    color: aliceblue;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-bottom: 2px solid var(--borderTextarea);
+}
+
+.code textarea::-webkit-scrollbar {
+    width: 6px;
+    background-color: var(--scrollBarbg);
+}
+
+.code textarea::-webkit-scrollbar-thumb {
+    width: 6px;
+    background-color: var(--scrollBarthumb);
+}
+
+.border {
+    margin-bottom: 5px;
+}
+
+
+div>h2 {
+    color: var(--defaultTextcolor);
+}
+
+.output {
+    background-color: black;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    background-color: var(--backgroundColor);
+    overflow: auto;
+}
+
+section>h2 {
+    color: var(--defaultTextcolor);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.output-frame {
+    height: calc(100% - 50px);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: calc(100% - 20px);
+    outline: none;
+    border: none;
+    background-color: var(--textArea-bg);
+}
