@@ -117,6 +117,8 @@ main {
 
 
 div>h2 {
+    padding-bottom: 5px;
+
     color: var(--defaultTextcolor);
 }
 
@@ -133,11 +135,11 @@ div>h2 {
 section>h2 {
     color: var(--defaultTextcolor);
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .output-frame {
-    height: calc(100% - 50px);
+    height: calc(100% - 54px);
     margin-bottom: 10px;
     margin-left: 10px;
     width: calc(100% - 20px);
