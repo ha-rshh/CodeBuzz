@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>CodeBuzz</title>
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
-<body>
+<body data-aos="zoom-out-up">
     <header class="cb-header">
         <div class="logo-container">
             <div class="cb-icon">
@@ -26,31 +27,33 @@
     </header>
     <main>
         <section class="editor">
-            <div class="code">
+            <div class="code" ata-aos="zoom-in-right">
                 <div class="html border">
                     <h2>HTML</h2>
-                    <textarea id=""></textarea>
+                    <textarea id="html-code"></textarea>
                 </div>
-                <div class="css border">
+                <div class="css border" data-aos="zoom-out-up">
                     <h2>CSS</h2>
-                    <textarea id=""></textarea>
+                    <textarea id="css-code"></textarea>
 
                 </div>
-                <div class="js border">
+                <div class="js border" data-aos="zoom-out-up">
                     <h2>JavaScript</h2>
-                    <textarea id=""></textarea>
+                    <textarea id="js-code"></textarea>
 
                 </div>
             </div>
         </section>
-        <section class="output">
+        <section class="output" data-aos="zoom-in-left">
             <h2>Output</h2>
-            <iframe id="" class="output-frame"></iframe>
+            <iframe id="result" class="output-frame"></iframe>
         </section>
     </main>
+    <script src="main.js"></script>
 </body>
-<script >
-    
-    </script>
-    
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
 </html>

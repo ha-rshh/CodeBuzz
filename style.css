@@ -23,11 +23,12 @@ body {
 
 /*x Header Starts here */
 .cb-header {
-    position: static;
-    background-color: black;
+    background-color: #F2CD5C;
     min-height: 60px;
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-container {
@@ -35,6 +36,8 @@ body {
     align-items: center;
     height: 100%;
     width: 250px;
+    cursor: pointer;
+
 }
 
 .cb-heading {
@@ -43,7 +46,8 @@ body {
 }
 
 .cb-title {
-    color: white;
+    color: black;
+    font-size: 2.5rem; 
 }
 
 .cb-icon {
@@ -57,6 +61,7 @@ body {
     width: 100%;
     transform: scale(0.9);
 }
+
 
 /*x main section starts here */
 main {
@@ -145,5 +150,5 @@ section>h2 {
     width: calc(100% - 20px);
     outline: none;
     border: none;
-    background-color: var(--textArea-bg);
+    background-color: white;
 }
