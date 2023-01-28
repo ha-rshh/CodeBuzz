@@ -1,21 +1,58 @@
 
-const htmlCode = document.getElementById("html-code");
-const cssCode = document.getElementById("css-code");
-const jsCode = document.getElementById("js-code");
-const result = document.getElementById("result");
+var htmlCode = CodeMirror.fromTextArea(document.getElementById("html-code"), {
+   mode: "text/html",
+   lineNumbers: true,
+   theme: "monokai",
+   autoCloseBrackets: true,
+   autoCloseTags: true,
+   htmlHint: true,
+   htmlHintOptions: {
+    'tag-pair': true
+  }
 
-function run() {
-  localStorage.setItem("htmlCode", htmlCode.value);
-  localStorage.setItem("cssCode", cssCode.value);
-  localStorage.setItem("jsCode", jsCode.value);
-  result.contentDocument.body.innerHTML = `<style> ${localStorage.cssCode} </style>` + localStorage.htmlCode;
-  result.contentWindow.eval(localStorage.jsCode);
+});
+var cssCode = CodeMirror.fromTextArea(document.getElementById("css-code"), {
+   mode: "text/css",
+   lineNumbers: true,
+   theme: "monokai",
+   autoCloseBrackets: true,
+
+});
+var jsCode = CodeMirror.fromTextArea(document.getElementById("js-code"), {
+   mode: "text/javascript",
+   lineNumbers: true,
+   theme: "monokai",
+   autoCloseBrackets: true,
+   autoclosetags: true,
+
+});
+
+console.log(htmlCode);
+// const result = document.getElementById("result");
+
+function updatePreview() {
+  const preview = document.getElementById("result").contentDocument;
+  preview.open();
+  preview.write(htmlCode.getValue() + "<style>" + cssCode.getValue() + "</style>" + "<scri" + "pt>" + jsCode.getValue() + " </scri" + "pt>");
+  preview.close();
 }
 
-htmlCode.onkeyup = () => run();
-cssCode.onkeyup = () => run();
-jsCode.onkeyup = () => run();
+htmlCode.on("change", updatePreview);
+cssCode.on("change", updatePreview);
+jsCode.on("change", updatePreview);
 
-htmlCode.value = localStorage.htmlCode;
-cssCode.value = localStorage.cssCode;
-jsCode.value = localStorage.jsCode;
+// function run() {
+//   localStorage.setItem("htmlCode", htmlCode.getValue());
+//   localStorage.setItem("cssCode", cssCode.getValue());
+//   localStorage.setItem("jsCode", jsCode.getValue());
+//   result.contentDocument.body.innerHTML = `<style> ${localStorage.cssCode} </style>` + localStorage.htmlCode;
+//   result.contentWindow.eval(localStorage.jsCode);
+// }
+
+// htmlCode.onkeyup = () => run();
+// cssCode.onkeyup = () => run();
+// jsCode.onkeyup = () => run();
+
+// htmlCode.getValue() = localStorage.htmlCode;
+// cssCode.getValue() = localStorage.cssCode;
+// jsCode.getValue() = localStorage.jsCode;

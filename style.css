@@ -70,6 +70,7 @@ main {
     background-color: var(--backgroundColor);
 }
 
+
 .editor {
     padding: 0.5rem;
     width: 30%;
@@ -93,7 +94,26 @@ main {
     grid-template-rows: repeat(3, 1fr);
 }
 
-.code textarea {
+.CodeMirror-Scroll{
+    height: calc(100% - 60px);
+}
+.CodeMirror-vscrollbar::-webkit-scrollbar{
+    width: 6px;
+    background-color: var(--scrollBarbg);
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-thumb {
+    width: 6px;
+    background-color: var(--scrollBarthumb);
+}
+
+.CodeMirror{
+    height: calc(100% - 40px);
+    border-bottom: 2px solid var(--borderTextarea);
+    font-size: 1rem;
+    resize: vertical !important;;
+}
+/* .code textarea {
     height: calc(100% - 2rem);
     width: 100%;
     background-color: var(--textArea-bg);
@@ -101,10 +121,9 @@ main {
     outline: none;
     resize: vertical;
     color: aliceblue;
-    font-size: 1.2rem;
     padding: 0.5rem;
     border-bottom: 2px solid var(--borderTextarea);
-}
+} */
 
 .code textarea::-webkit-scrollbar {
     width: 6px;
