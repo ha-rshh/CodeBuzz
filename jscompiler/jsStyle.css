@@ -70,7 +70,8 @@ main {
     justify-content: center;
     align-items: center;
 }
-.code-container{
+
+.code-container {
     border-radius: 5px;
 
     border: 2px solid #FDC91E;
@@ -79,18 +80,34 @@ main {
     margin: 10px;
     display: flex;
 }
-.code-editor{
+
+.code-editor {
     width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: auto;
 }
-.code-editor > h2{
+
+.code-editor::-webkit-scrollbar {
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--scrollBarbg);
+}
+
+.code-editor::-webkit-scrollbar-thumb {
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--scrollBarthumb);
+}
+
+.code-editor>h2 {
     color: #F2CD5C;
-    text-align: center;    
+    text-align: center;
 }
-.code-editor textarea{
+
+.code-editor textarea {
     width: 95%;
     height: 91%;
     margin: 5px;
@@ -101,26 +118,35 @@ main {
     font-size: 1.2rem;
     padding: 0.5rem;
     resize: none; */
-
 }
-.heading{
+
+.CodeMirror {
+    width: 95%;
+    height: 91%;
+    margin: 5px;
+}
+
+.heading {
     width: 100%;
     color: #F2CD5C;
     text-align: center;
     border-bottom: 1px solid #FDC91E;
 }
-.output{
+
+.output {
     width: 40%;
     height: 100%;
     display: flex;
     flex-direction: column;
     /* overflow: auto; */
 }
-.output-header{
+
+.output-header {
     height: 8%;
-    
+
 }
-.output-header button{
+
+.output-header button {
     margin-top: 3px;
     margin-bottom: 5px;
     padding: 05px 15px;
@@ -129,19 +155,22 @@ main {
     background-color: var(--borderTextarea);
     cursor: pointer;
 }
-.output-header button:hover{
-    background-color: #F2CD5C;
-}   
-.output-header button:active{
-    background-color: #F2CD5C;
-}   
 
-.user-input{
+.output-header button:hover {
+    background-color: #F2CD5C;
+}
+
+.output-header button:active {
+    background-color: #F2CD5C;
+}
+
+.user-input {
     height: 30%;
 }
-.user-input > textarea{
+
+.user-input>textarea {
     height: 98%;
-    width:  98%;
+    width: 98%;
     background-color: var(--textArea-bg);
     outline: none;
     border: none;
@@ -151,19 +180,24 @@ main {
     resize: none;
 
 }
-.result-header{
-  height: 8%;
-  color: #FDC91E;
+
+.result-header {
+    height: 8%;
+    color: #FDC91E;
 }
-.result-header h2{
+
+.result-header h2 {
     margin-top: 5px;
 }
-.result-box{
-    height: 60%
+
+.result-box {
+    height: 60%;
+    color: white;
 }
-.result-box > textarea{
+
+.result-box>textarea {
     height: 97%;
-    width:  98%; 
+    width: 98%;
     background-color: var(--textArea-bg);
     outline: none;
     border: none;
