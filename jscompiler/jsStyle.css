@@ -143,6 +143,7 @@ h2 {
 }
 
 
+
 .heading {
     width: 100%;
     color: #F2CD5C;
@@ -150,7 +151,7 @@ h2 {
     border-bottom: 1px solid #FDC91E;
 }
 
-.output {
+.output-container {
     width: 40%;
     height: 100%;
     display: flex;
@@ -186,13 +187,12 @@ button:active {
 }
 
 .result-box {
-    /* height: 60%; */
     height: 100%;
     color: white;
 
 }
 
-.result-box>textarea {
+.result-box > textarea {
     height: 97%;
     width: 98%;
     background-color: #2C3333;
@@ -203,3 +203,8 @@ button:active {
     padding: 0.5rem;
     resize: none;
 }
+.result-box > .CodeMirror {
+   padding: 1rem;
+}
+
+/*x navbar */

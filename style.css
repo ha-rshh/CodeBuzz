@@ -14,6 +14,11 @@
     box-sizing: border-box;
     list-style-type: none;
 }
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
 
 body {
 
@@ -170,4 +175,102 @@ section>h2 {
     outline: none;
     border: none;
     background-color: white;
+}
+
+/*x sidebar */
+.h-btn{
+    position: relative;
+    right: 1rem;
+    color: var(--defaultTextcolor);
+}
+.hamburger{
+    display: block;
+    /* left: 12rem; */
+    width: 35px;
+    cursor: pointer;
+    height: 35px;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    position: relative;
+    z-index: 101;
+}
+.hamburger .bar , .hamburger:after, .hamburger:before{
+    content: '';
+    display: block;
+    width: 30px;
+    border-radius: 3px;
+    height: 5px;
+    background-color:  var(--scrollBarbg);
+    margin: 6px 8px;
+    transition: 0.4s;
+    z-index: 100;
+}
+.hamburger.is-active:before{
+    transform: rotate(-45deg) translate(-8px, 7px);
+    background-color: #F2CD5C;
+    
+}
+.hamburger.is-active:after{
+    transform: rotate(45deg) translate(-9px, -8px);
+    background-color: #F2CD5C;
+}
+.hamburger.is-active .bar{
+    opacity: 0;
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    opacity: 0;
+  
+}
+ .is-overlay-active{
+    z-index: 97;
+    transition: 0.4s;
+    opacity: 0.5;;
+}
+
+.mobile-nav{
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 20%;
+    min-height: 100vh;
+    display: block;
+    z-index: 98;
+    background-color: var(--backgroundColor);
+    padding-top: 80px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    visibility: hidden;
+    transition: 0.4s;
+    min-width: 200px;
+}
+.mobile-nav.is-active{
+    visibility: visible;
+    right: 0;
+    left: 80%;
+    
+}
+
+.mobile-nav  a{
+    display: block;
+    color: var(--defaultTextcolor);
+    margin: auto 0.8rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    background-color: var(--scrollBarbg);
+}
+.mobile-nav  a:hover{
+    background-color:var(--scrollBarthumb);
+}
+.fa-solid{
+    font-size: 1rem;
+    color: gray;
+    margin-left: 10px;
+    margin-bottom: 4px;
 }
