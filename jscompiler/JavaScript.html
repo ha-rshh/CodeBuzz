@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Compiler | CodeBuzz</title>
+    <link rel="stylesheet" href="jsStyle.css">
+    <link rel="stylesheet" href="codemirror-5.65.11/lib/codemirror.css">
+    <link rel="stylesheet" href="codemirror-5.65.11/theme/monokai.css">
+    <script src="codemirror-5.65.11/lib/codemirror.js"></script>
+    <script src="codemirror-5.65.11/mode/javascript/javascript.js"></script>
+    <script src="codemirror-5.65.11/addon/edit/closebrackets.js"></script>
+    <script src="codemirror-5.65.11/addon/edit/closetag.js"></script>
+</head>
+
+<body>
+
+    <header class="cb-header">
+        <div class="logo-container">
+            <div class="cb-icon">
+                <img class="bee" src="https://cdn2.iconfinder.com/data/icons/bee-farm-filled/64/bee_farm-20-512.png"
+                    alt="" srcset="">
+            </div>
+            <div class="cb-heading">
+                <h1 class="cb-title">
+                    CodeBuzz
+                </h1>
+            </div>
+        </div>
+    </header>
+    <main class="main-container">
+        <section class="code-container">
+            <div class="code-editor">
+                <div class="code-editor-head">
+                    <h2>JavaScript</h2>
+                    <div class="btn">
+                        <button>Run</button>
+                        <button>Clear</button>
+                    </div>
+                </div>
+                <div class="code-playground">
+                    <textarea name="editor" id="editor"></textarea>
+                </div>
+            </div>
+            <div class="output">
+                <div class="output-header">
+                    <h2>Output</h2>
+                </div>
+                <div class="result-box">
+                    <textarea name="result" id="result" class="output-box"></textarea>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="javascript.js"></script>
+
+</html>
