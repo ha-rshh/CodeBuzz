@@ -1,5 +1,5 @@
-window.onload = () => {
-  const editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+
+  var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
     value: "function myScript(){return 100;}\n",
     mode: "text/javascript",
     theme: "monokai",
@@ -9,18 +9,40 @@ window.onload = () => {
     lineWrapping: true,
   });
 
-  const output = CodeMirror.fromTextArea(document.getElementById("result"), {
+  var output = CodeMirror.fromTextArea(document.getElementById("result"), {
     theme: "monokai",
     lineNumbers: false,
     readOnly: true,
+    lineWrapping: true,
     
   });
 
-  const run = document.querySelector("#run-btn");
-  const clear = document.querySelector("#clear-btn");
+  var run = document.querySelector("#run-btn");
+  var clear = document.querySelector("#clear-btn");
+
+  // var output = "";
+  // var log = function(msg){
+  //   output += msg + "\n";
+  // }; 
+
+
+
+  // run.addEventListener("click", ()=>{
+  //   output = "";
+  //   var code = editor.getValue();
+  //   try{
+  //     // eval(code);
+  //     eval(code);
+  //   } catch(e){
+  //     output = e.message;
+  //   }
+  //   document.getElementById("result").innerHTML = output;
+  // })
+
 
   run.addEventListener("click", () => {
     const runCode = editor.getValue();
+    if(editor.getValue() == "") return;
     try {
       output.replaceRange(
         `$ ` + eval(`${runCode}`) + "\n",
@@ -28,19 +50,21 @@ window.onload = () => {
       );
     } catch (e) {
       output.replaceRange(`$ ` + e + "\n", CodeMirror.Pos(output.lastLine()));
+      // output = e.message;
+
     }
   });
   clear.addEventListener("click", () => {
     output.setValue("");
   });
-};
 
-submit(function(e){
-   var value = editor.getValue();
-   if(value. length == 0){
-     alert("Missing comment!");
-     } 
-    });
+
+// submit(function(e){
+//    var value = editor.getValue();
+//    if(value. length == 0){
+//      alert("Missing comment!");
+//      } 
+//     });
 // run.addEventListener("click", () => {
 //   const runCode = editor.getValue();
 // clear.addEventListener("click", () => {
