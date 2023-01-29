@@ -14,7 +14,9 @@
     box-sizing: border-box;
     list-style-type: none;
 }
-html, body{
+
+html,
+body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -52,7 +54,7 @@ body {
 
 .cb-title {
     color: black;
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
 }
 
 .cb-icon {
@@ -67,6 +69,25 @@ body {
     transform: scale(0.9);
 }
 
+.run-btn {
+    background-color: #F2CD5C;
+    position: relative;
+    bottom: 3px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.run-btn:active {
+    background-color: #524d3e;
+}
+
+.fa-solid {
+    color: #2C3333;
+    position: relative;
+    top: 3px;
+    right: 4px;
+}
 
 /*x main section starts here */
 main {
@@ -99,10 +120,11 @@ main {
     grid-template-rows: repeat(3, 1fr);
 }
 
-.CodeMirror-Scroll{
+.CodeMirror-Scroll {
     height: calc(100% - 60px);
 }
-.CodeMirror-vscrollbar::-webkit-scrollbar{
+
+.CodeMirror-vscrollbar::-webkit-scrollbar {
     width: 6px;
     background-color: var(--scrollBarbg);
 }
@@ -112,12 +134,14 @@ main {
     background-color: var(--scrollBarthumb);
 }
 
-.CodeMirror{
+.CodeMirror {
     height: calc(100% - 40px);
     border-bottom: 2px solid var(--borderTextarea);
     font-size: 1rem;
-    resize: vertical !important;;
+    resize: vertical !important;
+    ;
 }
+
 /* .code textarea {
     height: calc(100% - 2rem);
     width: 100%;
@@ -178,12 +202,13 @@ section>h2 {
 }
 
 /*x sidebar */
-.h-btn{
+.h-btn {
     position: relative;
     right: 1rem;
     color: var(--defaultTextcolor);
 }
-.hamburger{
+
+.hamburger {
     display: block;
     /* left: 12rem; */
     width: 35px;
@@ -196,44 +221,53 @@ section>h2 {
     position: relative;
     z-index: 101;
 }
-.hamburger .bar , .hamburger:after, .hamburger:before{
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
     content: '';
     display: block;
     width: 30px;
     border-radius: 3px;
     height: 5px;
-    background-color:  var(--scrollBarbg);
+    background-color: var(--scrollBarbg);
     margin: 6px 8px;
     transition: 0.4s;
     z-index: 100;
 }
-.hamburger.is-active:before{
+
+.hamburger.is-active:before {
     transform: rotate(-45deg) translate(-8px, 7px);
     background-color: #F2CD5C;
-    
+
 }
-.hamburger.is-active:after{
+
+.hamburger.is-active:after {
     transform: rotate(45deg) translate(-9px, -8px);
     background-color: #F2CD5C;
 }
-.hamburger.is-active .bar{
+
+.hamburger.is-active .bar {
     opacity: 0;
 }
-.overlay{
+
+.overlay {
     height: 100%;
     width: 100%;
     background-color: black;
     position: fixed;
     opacity: 0;
-  
-}
- .is-overlay-active{
-    z-index: 97;
-    transition: 0.4s;
-    opacity: 0.5;;
+
 }
 
-.mobile-nav{
+.is-overlay-active {
+    z-index: 97;
+    transition: 0.4s;
+    opacity: 0.5;
+    ;
+}
+
+.mobile-nav {
     position: fixed;
     top: 0;
     left: 100%;
@@ -248,14 +282,15 @@ section>h2 {
     transition: 0.4s;
     min-width: 200px;
 }
-.mobile-nav.is-active{
+
+.mobile-nav.is-active {
     visibility: visible;
     right: 0;
     left: 80%;
-    
+
 }
 
-.mobile-nav  a{
+.mobile-nav a {
     display: block;
     color: var(--defaultTextcolor);
     margin: auto 0.8rem;
@@ -265,10 +300,12 @@ section>h2 {
     text-decoration: none;
     background-color: var(--scrollBarbg);
 }
-.mobile-nav  a:hover{
-    background-color:var(--scrollBarthumb);
+
+.mobile-nav a:hover {
+    background-color: var(--scrollBarthumb);
 }
-.fa-solid{
+
+.fa-solid {
     font-size: 1rem;
     color: gray;
     margin-left: 10px;

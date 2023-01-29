@@ -39,7 +39,9 @@ function updatePreview() {
 
 htmlCode.on("change", updatePreview);
 cssCode.on("change", updatePreview);
-jsCode.on("change", updatePreview);
+document.getElementById('run').addEventListener("click", updatePreview)
+
+
 
 // function run() {
 //   localStorage.setItem("htmlCode", htmlCode.getValue());
